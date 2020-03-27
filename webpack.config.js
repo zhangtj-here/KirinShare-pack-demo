@@ -19,7 +19,12 @@ module.exports = {
 			// },
 			{
 				test: /\.js$/,
-				use: './loaders/loader.js', 
+				use: {
+					loader: './loaders/loader.js',
+					options: {
+						name: '明天'
+					}
+				}, 
 				enforce: 'pre'
 			},
 			{

@@ -5,7 +5,7 @@ const loaderUtils = require('loader-utils')
 module.exports = function(source) {
 	// this.query已废弃，最新的api是使用loaderUtils.getOptions方法来获取
 	// console.log('loader', this.query)
-	let options = loaderUtils.getOptions(this)
-	console.log('loader', options)
-	return source.replace(/今天/g, options.name)
+	// let options = loaderUtils.getOptions(this)
+	// console.log('loader', options)
+	return source.replace(/今天/g, '明天')
 }

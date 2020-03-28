@@ -1,4 +1,5 @@
 const path = require('path')
+const TestPlugin = require('./plugins/testPlugin')
 
 module.exports = {
 	entry: './src/index.js',
@@ -10,6 +11,9 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	mode: 'development',
+	plugins: [
+		new TestPlugin()
+	],
 	module: {
 		// 配置rule.enforce可以修改顺序，顺序为pre > inline > normal > post
 		rules: [

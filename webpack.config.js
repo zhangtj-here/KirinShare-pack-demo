@@ -1,5 +1,5 @@
 const path = require('path')
-const TestPlugin = require('./plugins/testPlugin')
+const HtmlWebpackPlugin = require('./plugins/htmlWebpackPlugin')
 
 module.exports = {
 	entry: './src/index.js',
@@ -12,7 +12,10 @@ module.exports = {
 	},
 	mode: 'development',
 	plugins: [
-		new TestPlugin()
+		new HtmlWebpackPlugin({
+			filename: 'index.html',
+			template: './src/index.html'
+		})
 	],
 	module: {
 		// 配置rule.enforce可以修改顺序，顺序为pre > inline > normal > post

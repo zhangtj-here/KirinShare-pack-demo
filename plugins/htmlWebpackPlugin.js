@@ -26,6 +26,7 @@ module.exports = class HtmlWebpackPlugin {
 			// 3. 使用工具分析HTML，推荐使用cheerio，可以直接使用jQuery api
 			let $ = cheerio.load(result)
 			// 4. 循环遍历webpack打包的资源文件列表，如果有多个bundle就都打包进去（可以根据需求自己修改，因为可能有chunk，一般只引入第一个即可）
+			console.log(compilation.assets)
 			Object.keys(compilation.assets).forEach(item => {
 				$(`<script src="/${item}"></script>`).appendTo('body')
 			})
